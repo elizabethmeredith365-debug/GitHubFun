@@ -1,4 +1,4 @@
-import random
+
 
 class Card:
     FACE_NAMES = {
@@ -38,16 +38,6 @@ class Card:
                 for value in range(Deck.LOWEST_VALUE, Deck.HIGHEST_VALUE + 1):
                     self.cards.append(Card(suit,value))
 
-        def shuffle(self):
-            random.shuffle(self.cards)
-
-        def draw(self):
-            if len(self.cards) == 0
-                return None
-            return self.cards.pop()
-
-        def __len__(self):
-            return len(self.cards)
-
+        
            
             
