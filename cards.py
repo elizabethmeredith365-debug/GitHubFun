@@ -26,17 +26,17 @@ class Card:
         return self.value == other.value
 
 
-    class Deck:
-        SUITS = ["Spades", "Hearts", "Clubs", "Diamonds"]
-        LOWEST_VALUE = 2
-        HIGHEST_VALUE = 14
+class Deck:
+    SUITS = ["Spades", "Hearts", "Clubs", "Diamonds"]
+    LOWEST_VALUE = 2
+    HIGHEST_VALUE = 14
         
-        def __init__(self):
-            self.cards = []
+    def __init__(self):
+        self.cards = []
 
-            for suit in Deck.SUITS:
-                for value in range(Deck.LOWEST_VALUE, Deck.HIGHEST_VALUE + 1):
-                    self.cards.append(Card(suit,value))
+        for suit in Deck.SUITS:
+            for value in range(Deck.LOWEST_VALUE, Deck.HIGHEST_VALUE + 1):
+                self.cards.append(Card(suit,value))
 
         
            
