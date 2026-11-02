@@ -37,6 +37,7 @@ class Deck:
         for suit in Deck.SUITS:
             for value in range(Deck.LOWEST_VALUE, Deck.HIGHEST_VALUE + 1):
                 self.cards.append(Card(suit,value))
+#change
 
         
            
