@@ -1,3 +1,5 @@
+import random
+
 class Player:
   
     def __init__(self, name, hand = None):
@@ -10,6 +12,8 @@ class Player:
         return None
 
     def  add_cards(self, cards):
+        cards = list(cards)
+        random.shuffle(cards) #to prevent endless loops
         self.hand.extend(cards)
 
     def count_cards(self): 

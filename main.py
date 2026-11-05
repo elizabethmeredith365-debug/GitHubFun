@@ -1,4 +1,3 @@
-# Import random
 from Cards import Deck
 from player import Player
 
@@ -18,7 +17,7 @@ def main():
 
     print("Player 1 cards:", player1.count_cards())
     print("Player 2 cards:", player2.count_cards())
-    
+
     round_number = 1
 
     # Keep playing while both players have cards.
@@ -70,7 +69,7 @@ def main():
         print(f"{player2.name} has {player2.count_cards()} cards.")
         round_number += 1
 
-    # determine winner when one player has collected all the cards.
+    # Determine winner when one player has collected all the cards.
     if player1.has_cards():
         print(f"{player1.name} has collected all of the cards.")
         print(f"{player1.name} wins the game!")
@@ -78,6 +77,7 @@ def main():
         print(f"{player2.name} has collected all of the cards.")
         print(f"{player2.name} wins the game!")
 
-#executes main
+
+# Executes main
 if __name__ == "__main__":
     main()
