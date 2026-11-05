@@ -1,8 +1,8 @@
 class Player:
   
-    def __init__(self, name, hand):
+    def __init__(self, name, hand = None):
             self.name = name
-            self.hand = hand 
+            self.hand = [] if hand is None else hand
 
     def draw_card(self):
         if self.hand:
