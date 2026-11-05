@@ -1,34 +1,47 @@
+import random
+
 class Card:
-	FACE_NAMES = {
-		11: "Jack",
-		12: "Queen",
-		13: "King",
-		14: "Ace",
-	}
+    FACE_NAMES = {
+        11: "Jack",
+        12: "Queen",
+        13: "King",
+        14: "Ace",
+    }
 
-	def __init__(self, suit, value):
-		self.suit = suit
-		self.value = value
+    def __init__(self, suit, value):
+        self.suit = suit
+        self.value = value
 
-	def __str__(self):
-		card_value = Card.FACE_NAMES.get(self.value, str(self.value))
-		return f"{card_value} of {self.suit}"
+    def __str__(self):
+        card_value = Card.FACE_NAMES.get(self.value, str(self.value))
+        return f"{card_value} of {self.suit}"
 
-	def __gt__(self, other):
-		return self.value > other.value
+    def __gt__(self, other):
+        return self.value > other.value
 
-	def __eq__(self, other):
-		return self.value == other.value
+    def __eq__(self, other):
+        return self.value == other.value
 
 
 class Deck:
-	SUITS = ["Spades", "Hearts", "Clubs", "Diamonds"]
-	LOWEST_VALUE = 2
-	HIGHEST_VALUE = 14
+    SUITS = ["Spades", "Hearts", "Clubs", "Diamonds"]
+    LOWEST_VALUE = 2
+    HIGHEST_VALUE = 14
 
-	def __init__(self):
-		self.cards = []
+    def __init__(self):
+        self.cards = []
 
-		for suit in Deck.SUITS:
-			for value in range(Deck.LOWEST_VALUE, Deck.HIGHEST_VALUE + 1):
-				self.cards.append(Card(suit, value))
+        for suit in Deck.SUITS:
+            for value in range(Deck.LOWEST_VALUE, Deck.HIGHEST_VALUE + 1):
+                self.cards.append(Card(suit, value))
+
+    def shuffle(self):
+        random.shuffle(self.cards)
+
+    def draw(self):
+        if not self.cards:
+            return None
+        return self.cards.pop()
+
+    def __len__(self):
+      return len(self.cards)
